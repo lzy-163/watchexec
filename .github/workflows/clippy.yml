@@ -29,9 +29,8 @@ jobs:
     - uses: actions/checkout@v3
     - name: Configure toolchain
       run: |
-        rustup toolchain install --profile minimal --no-self-update nightly
+        rustup toolchain install --profile minimal --component clippy --no-self-update nightly
         rustup default nightly
-        rustup component add clippy
 
     # https://github.com/actions/cache/issues/752
     - if: ${{ runner.os == 'Windows' }}
@@ -55,4 +54,3 @@ jobs:
 
     - name: Clippy
       run: cargo clippy -- -D clippy::all
-
