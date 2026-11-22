@@ -54,5 +54,4 @@ jobs:
           ${{ runner.os }}-cargo-
 
     - name: Clippy
-      run: cargo clippy -- -D clippy::all
-
+      run: cargo +nightly clippy -- -D clippy::all
