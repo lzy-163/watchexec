@@ -55,4 +55,3 @@ jobs:
 
     - name: Clippy
       run: cargo clippy -- -D clippy::all
-
